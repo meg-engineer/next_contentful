@@ -32,7 +32,7 @@ export default function Profile() {
         </button>
         <button className="btn btn-info mr-3">
           <a
-            href="https://github.com/meg-engineer"
+            href="https://twitter.com/MegEngineer"
             target="_blank"
             rel="noopener noreferrer"
           >
