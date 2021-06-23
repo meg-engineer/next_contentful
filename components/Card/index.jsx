@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { handleDate } from "../../utils";
 import Date from "../Date";
 
 export default function Card({ post, index }) {
@@ -8,6 +7,9 @@ export default function Card({ post, index }) {
     <Link href="/blog/[slug]" as={`/blog/${post.fields.slug}`}>
       <a>
         <div className="card m-5 p-5 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+          <div class="text-white text-xs flex items-center absolute py-2 px-2 shadow-xl top-7 left-7 bg-pink-500 z-50">
+            <p>{post.fields.tags[0].fields.title}</p>
+          </div>
           <figure>
             <Image
               src={`https:${post.fields.headerImage.fields.file.url}`}
