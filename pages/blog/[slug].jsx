@@ -16,9 +16,14 @@ export default function Blog({ post }) {
             <div className="px-4 lg:px-0">
               <h1 className="text-3xl font-semibold text-gray-800 leading-tight mb-5">
                 {post.fields.title}
-                <span className="text-gray-500 text-sm ml-5">
+                <p>
+                  <span class="badge border-0 rounded-none text-white text-xs py-2 px-2 my-2 shadow-xl bg-pink-500">
+                    {post.fields.tags[0].fields.title}
+                  </span>
+                </p>
+                <div className="text-gray-500 text-sm">
                   <Date date={post.sys.createdAt} />
-                </span>
+                </div>
               </h1>
               <Image
                 src={`https:${post.fields.headerImage.fields.file.url}`}
