@@ -1,14 +1,23 @@
 import Head from "next/head";
 
-export default function Seo({ post }) {
-  console.log(post);
-  const defaultTitle = "demo";
-  const defaultDescription = "demo";
+export default function Seo({
+  pageTitle,
+  pageDescription,
+  pagePath,
+  pageImg,
+  pageImgWidth,
+  pageImgHeight,
+}) {
+  const defaultTitle = "Meg Blog";
+  const defaultDescription =
+    "フロントエンドエンジニア１年目MegのTechブログ。エンジニアライフ、技術的なアウトプットを中心に発信します。";
+  const defaultPath = "https://next-contentful-vert.vercel.app/";
+  const defaultImg = "/images/yatta.png";
 
   const title = pageTitle ? `${pageTitle} | ${defaultTitle}` : defaultTitle;
   const description = pageDescription ? pageDescription : defaultDescription;
-  const url = pagePath;
-  const imgUrl = pageImg;
+  const url = pagePath ? pagePath : defaultPath;
+  const imgUrl = pageImg ? pageImg : defaultImg;
   const imgWidth = pageImgWidth ? pageImgWidth : 1280;
   const imgHeight = pageImgHeight ? pageImgHeight : 640;
 
