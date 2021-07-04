@@ -3,6 +3,7 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { getAllPostsWithSlug, getPostBySlug } from "../api/contentful";
 import Layout from "../../components/Layout";
+import Seo from "../../components/Seo";
 import Profile from "../../components/Profile";
 import CodeBlock from "../../components/CodeBlock";
 import Date from "../../components/Date";
@@ -10,6 +11,12 @@ import Date from "../../components/Date";
 export default function Blog({ post }) {
   return (
     <Layout title={post ? post.fields.title : "Blog"}>
+      <Seo
+        pageTitle={post.fields.title}
+        pageDescription={post.fields.description}
+        pagePath={`https://next-contentful-vert.vercel.app/blog/${post.fields.slug}`}
+        pageImg={post.fields.headerImage.fields.file.url}
+      />
       <div className="container mx-auto">
         {post && (
           <div>
@@ -17,7 +24,7 @@ export default function Blog({ post }) {
               <h1 className="text-3xl font-semibold text-gray-800 leading-tight mb-5">
                 {post.fields.title}
                 <p>
-                  <span class="badge border-0 rounded-none text-white text-xs py-2 px-2 my-2 shadow-xl bg-pink-500">
+                  <span className="badge border-0 rounded-none text-white text-xs py-2 px-2 my-2 shadow-xl bg-pink-500">
                     {post.fields.tags[0].fields.title}
                   </span>
                 </p>
