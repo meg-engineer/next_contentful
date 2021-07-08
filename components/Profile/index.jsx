@@ -4,7 +4,7 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 export default function Profile() {
   return (
-    <div className="p-4 border-t border-b md:border md:rounded">
+    <div className="p-8 border-t border-b md:border md:rounded">
       <div className="flex py-2">
         <img
           src="/images/me.png"

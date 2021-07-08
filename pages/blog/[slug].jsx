@@ -42,7 +42,7 @@ export default function Blog({ post }) {
                 />
               </div>
               <div className="flex flex-col lg:flex-row lg:space-x-12">
-                <div className="markdown px-4 pb-6 mt-12 text-gray-700 leading-relaxed w-full lg:w-3/4">
+                <div className="markdown px-6 pb-6 mt-12 text-gray-700 leading-relaxed w-full lg:w-3/5">
                   <ReactMarkdown
                     children={post.fields.body}
                     components={{
@@ -57,7 +57,7 @@ export default function Blog({ post }) {
                     </Link>
                   </div>
                 </div>
-                <div className="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
+                <div className="w-full lg:w-2/5 m-auto mt-12 max-w-screen-sm">
                   <Profile />
                 </div>
               </div>
